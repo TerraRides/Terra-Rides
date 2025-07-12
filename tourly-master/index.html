@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agancy</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <style>
+      .tour-search-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 20px;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .btn.btn-secondary {
+    grid-column: span 2;
+    padding: 12px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .btn.btn-secondary:hover {
+    background-color: #005fcc;
+  }
+
+  @media (max-width: 600px) {
+    .btn.btn-secondary {
+      grid-column: span 1;
+    }
+}
+
+    </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="https://chat.whatsapp.com/KpXGtBvCXpYKaMdxtg6PiS" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title"></p>
+
+            <p class="helpline-number"></p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="./assets/images/Terra_Rides_Logo_4_optimized.png" alt="Tourly logo">
+        </a>
+
+        <div class="header-btn-group">
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="">
+              <!-- <ion-icon name="logo-facebook"></ion-icon> -->
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="">
+              <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="">
+              <!-- <ion-icon name="logo-youtube"></ion-icon> -->
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./assets/images/logo-blue.svg" alt="Tourly logo">
+              <h1></h1>
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+
+            <li>
+              <a href="#home" class="navbar-link" data-nav-link>home</a>
+            </li>
+
+            <li>
+              <a href="#" class="navbar-link" data-nav-link>about us</a>
+            </li>
+
+            <li>
+              <a href="#destination" class="navbar-link" data-nav-link>destination</a>
+            </li>
+
+            <li>
+              <a href="#package" class="navbar-link" data-nav-link>packages</a>
+            </li>
+
+            <li>
+              <a href="#gallery" class="navbar-link" data-nav-link>gallery</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="navbar-link" data-nav-link>contact us</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <button class="btn btn-primary">Book Now</button>
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <h2 class="h1 hero-title">Journey to explore world</h2>
+
+          <p class="hero-text">
+            Embark on a journey to explore the world — one destination at a time
+          </p>
+
+          <div class="btn-group">
+            <button class="btn btn-primary">Learn more</button>
+
+            <button class="btn btn-secondary">Book now</button>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TOUR SEARCH
+      -->
+
+      <section class="tour-search">
+        <div class="container">
+      
+          <form action="https://formsubmit.co/7b01528ef3a725ad1163ba722ad8e742" method="POST" class="tour-search-form">
+            <div class="input-wrapper">
+              <label for="destination" class="input-label">Search Destination*</label>
+              <input type="text" name="Destination" id="destination" required placeholder="Enter Destination" class="input-field">
+            </div>
+      
+            <div class="input-wrapper">
+              <label for="people" class="input-label">Pax Number*</label>
+              <input type="number" name="People" id="people" required placeholder="No. of People" class="input-field">
+            </div>
+      
+            <div class="input-wrapper">
+              <label for="checkin" class="input-label">Check-in Date*</label>
+              <input type="date" name="Check-in" id="checkin" required class="input-field">
+            </div>
+      
+            <div class="input-wrapper">
+              <label for="checkout" class="input-label">Checkout Date*</label>
+              <input type="date" name="Checkout" id="checkout" required class="input-field">
+            </div>
+      
+            <button type="submit" class="btn btn-secondary">Inquire Now</button>
+          </form>
+      
+        </div>
+      </section>
+      
+
+
+
+
+
+      <!-- 
+        - #POPULAR
+      -->
+
+      <section class="popular" id="destination">
+        <div class="container">
+
+          <p class="section-subtitle">Uncover place</p>
+
+          <h2 class="h2 section-title">Popular destination</h2>
+
+          <p class="section-text">
+            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
+            Sit ornare
+            mollitia tenetur, aptent.
+          </p>
+
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./assets/images/chikmagalur.jpg" alt="chikmagalur" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Chikmagalur</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Karnataka</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./assets/images/yanacave.jpg" alt="Kodaikanal" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Gokarna</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Karnataka</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./assets/images/Murdeshwara.jpg" alt="Murdeshwara" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Murdeshwara</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Karnataka</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./assets/images/udupi krishna images.jpg" alt="udupi krishna images" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Udupi</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Karnataka</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./assets/images/kodaikanal.jpg" alt="kodaikanal" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">kodaikanal</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Tamil Nadu</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="./assets/images/download.png" alt="Munnar" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="#">Munnar</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Kerala</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-primary">More destintion</button>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PACKAGE
+      -->
+
+      <section class="package" id="package">
+        <div class="container">
+
+          <p class="section-subtitle">Popular Packeges</p>
+
+          <h2 class="h2 section-title">Checkout Our Packeges</h2>
+
+          <p class="section-text">
+            where misty mornings, lush coffee plantations, and peaceful getaways await your discovery. create memories that last a lifetime with our curated travel experiences.
+          </p>
+
+          <ul class="package-list">
+
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/chikmagalur.jpg" alt="Experience The Great Holiday On Beach" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Experience The Great Holiday On Chikmagalur</h3>
+
+                  <p class="card-text">
+                    Escape to the serene hills of Chikmagalur — where misty mornings, coffee plantations, and peaceful getaways await your discovery.
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">2D/1N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">People:7</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Chikmagalur</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+
+                  <div class="wrapper">
+
+                    <p class="reviews">(25 reviews)</p>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                  </div>
+
+                  <p class="price">
+                    11,800
+                  </p>
+
+                  <button class="btn btn-secondary">Book Now</button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/Coorg.jpg" alt="Summer Holiday to Coorg" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Summer Holiday - Coorgr</h3>
+
+                  <p class="card-text">
+                    Embrace the lush green beauty of Coorg this summer — a perfect blend of nature, waterfalls, and cozy retreats in the lap of the Western Ghats.
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">2D/1N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">people: 7</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Coorg</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+
+                  <div class="wrapper">
+
+                    <p class="reviews">(20 reviews)</p>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                  </div>
+
+                  <p class="price">
+                    11,000
+                  </p>
+
+                  <button class="btn btn-secondary">Book Now</button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/ooty.jpg" alt="Ooty Weekend Vacation" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Ooty Weekend Vacation</h3>
+
+                  <p class="card-text">
+                    Reconnect with nature in the queen of hill stations — enjoy a refreshing weekend surrounded by Ooty’s tranquil landscapes and scenic charm
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">3D/2N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">people: 7</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Tamil Nadu</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+
+                  <div class="wrapper">
+
+                    <p class="reviews">(40 reviews)</p>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                  </div>
+
+                  <p class="price">
+                    14,000
+                  </p>
+
+                  <button class="btn btn-secondary">Book Now</button>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-primary">View All Packages</button>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #GALLERY
+      -->
+
+      <section class="gallery" id="gallery">
+        <div class="container">
+
+          <p class="section-subtitle">Photo Gallery</p>
+
+          <h2 class="h2 section-title">Photo's From Travellers</h2>
+
+          <p class="section-text">
+            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
+            Sit ornare
+            mollitia tenetur, aptent.
+          </p>
+
+          <ul class="gallery-list">
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/images/pic0.jpg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/images/pic1.jpeg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/images/img9.jpg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/images/pic3.jpeg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="./assets/images/pic4.jpeg" alt="Gallery image">
+              </figure>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+
+            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+
+            <p class="section-text">
+              Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque
+              laudantium. Sit ornare
+              mollitia tenetur, aptent.
+            </p>
+          </div>
+          <a href="https://chat.whatsapp.com/KpXGtBvCXpYKaMdxtg6PiS">
+            <button class="btn btn-secondary">Contact Us !</button>
+          </a>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/Terra_Rides_Logo_3_optimized.png" alt="Tourly logo">
+          </a>
+
+          <p class="footer-text">
+            Experience seamless journeys where comfort meets style, with curated travel plans designed to elevate every moment of your adventure
+          </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+          <h4 class="contact-title">Contact Us</h4>
+
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+
+          <ul>
+
+            <ul class="contact-list">
+
+              <li class="contact-item">
+                <ion-icon name="logo-whatsapp" style="color: green;"></ion-icon>
+                <a href="https://chat.whatsapp.com/KpXGtBvCXpYKaMdxtg6PiS" class="contact-link" target="_blank">
+                  whatsapp Group
+                </a>
+              </li>
+            
+              <li class="contact-item">
+                <ion-icon name="mail-outline"></ion-icon>
+                <a href="mailto:ridesterra@gmail.com" class="contact-link">ridesterra@gmail.com</a>
+              </li>
+            
+              <li class="contact-item">
+                <ion-icon name="location-outline"></ion-icon>
+                <address>Bangalore, Karnataka</address>
+              </li>
+            
+            </ul>
+            
+
+          </ul>
+
+        </div>
+
+        <div class="footer-form">
+
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+
+          <form action="https://formsubmit.co/7b01528ef3a725ad1163ba722ad8e742" method="POST"  class="form-wrapper">
+                <input placeholder="Enter your Email" type="email" name="Checkout" id="checkout" required class="input-field">
+              <button type="submit" class="btn btn-secondary">Inquire Now</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="">codewithsadee</a>. All rights reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
